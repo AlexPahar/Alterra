@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #eceff4;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+.contact-wrapper {
+    width: 320px;
+    margin: 0 auto;
+}
+.top-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+.top-wrapper, .bottom-wrapper {
+    width: 320px;
+    background: #ffffff;
+    font-size: 14px;
+
+}
+h3.title-top {
+    font-weight: 400;
+    margin-left: 20px;
+}
+input.name, input.phone {
+    width: 270px;
+    height: 40px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+}
+input.name {
+    margin-bottom: 10px;
+}
+input {
+    outline: none;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+}
+input::placeholder {
+    color: #bababa;
+}
+.title-wrap {
+    height: 60px;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 20px;
+}
+.title-wrap-bot {
+    height: 60px;
+    border-bottom: 1px solid #eeeeee;
+}
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.add-button {
+    width: 98px;
+    height: 40px;
+    background: #4d59a1;
+    color: #fff;
+    border-radius: 3px;
+    font-family: 'Open Sans', sans-serif;
+    margin: 15px 25px 25px auto;
+}
+button {
+    outline: none;
+    border: none;
+}
+.bottom-wrapper {
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+}
+.close-btn {
+    width: 7px;
+    height: 7px;
+    background: url(images/close.png);
+    margin-left: 4px;
+    margin-top: 1px;
+}
+.name-contact {
+    display: flex;
+    align-items: center;
+}
+.contact-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.contact {
+    margin-bottom: 20px;
+    border-top: 1px solid #eee;
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 25px;
+    padding-top: 20px;
+}
+.contact:first-child {
+    border-top: none;
+}
+.phone-contact {
+    color: #666666;
+}
