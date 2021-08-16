@@ -37,6 +37,7 @@ input.name {
     margin-bottom: 10px;
 }
 input {
+    font-weight: 300;
     outline: none;
     border: none;
     font-family: 'Open Sans', sans-serif;

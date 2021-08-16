@@ -1,12 +1,12 @@
 <?php
-require 'connect.php';
-$connect = new PDO_CONNECT('localhost', 'alterra', 'root', 'root');
-if (!empty($_POST) && !empty($_POST["name"]) && !empty($_POST["phone"])) {
-    $connect->addTableItem('phones', $_POST);
-}
-if (!empty($_GET) && !empty($_GET["DELETE_ELEMENT"])) {
-    $connect->deleteTableItem($_GET["DELETE_ELEMENT"], 'phones');
-}
+session_start();
+require_once "api/config/database.php";
+require_once "api/objects/phones.php";
+
+$database = new Database();
+$db = $database->getConnection();
+
+$phones = new Phones($db);
 ?>
 
 <!DOCTYPE html>
@@ -22,13 +22,13 @@ if (!empty($_GET) && !empty($_GET["DELETE_ELEMENT"])) {
 </head>
 <body>
 <div class="contact-wrapper">
-    <form action="/тестовое%20альтерра/" method="post" class="top-wrapper">
+    <form action="/" method="post" class="top-wrapper">
         <div class="title-wrap">
             <h3 class="title-top">Добавить контакт</h3>
         </div>
         <div class="input-wrapper">
             <input type="text" name="name" class="name" placeholder="Имя">
-            <input type="text" name="phone" class="phone" placeholder="Телефон">
+            <input type="text" id="phone" name="phone" class="phone" placeholder="Телефон">
         </div>
         <button class="add-button">Добавить</button>
     </form>
@@ -38,13 +38,13 @@ if (!empty($_GET) && !empty($_GET["DELETE_ELEMENT"])) {
         </div>
         <div class="contact-wrap">
             <?php
-            $data = $connect->getQueryList('phones', ['id', 'name', 'phone']);
+            $data = $phones->read();
             while ($row = $data->fetch()) {
                 ?>
                 <div class="contact">
                     <div class="name-contact">
                         <div class="name"><?= $row["name"] ?></div>
-                        <a href="/?DELETE_ELEMENT=<?= $row["id"] ?>" class="close-btn"></a>
+                        <div data-id="<?= $row["id"] ?>" class="close-btn"></div>
                     </div>
                     <div class="phone-contact">
                         <?= $row["phone"] ?>
@@ -54,5 +54,7 @@ if (!empty($_GET) && !empty($_GET["DELETE_ELEMENT"])) {
         </div>
     </div>
 </div>
+    <script src="js/inputmask.min.js"></script>
+    <script src="js/form.js"></script>
 </body>
 </html>
