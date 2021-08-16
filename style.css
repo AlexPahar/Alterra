@@ -14,17 +14,18 @@ body {
     flex-direction: column;
     margin-top: 100px;
     margin-bottom: 20px;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 .top-wrapper, .bottom-wrapper {
     width: 320px;
     background: #ffffff;
     font-size: 14px;
-
+    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.05);
 }
 h3.title-top {
     font-weight: 400;
-    margin-left: 20px;
+    margin-left: 25px;
+    font-size: 14px;;
 }
 input.name, input.phone {
     width: 270px;
@@ -51,10 +52,14 @@ input::placeholder {
     height: 60px;
     border-bottom: 1px solid #eeeeee;
     margin-bottom: 20px;
+    align-items: center;
+    display: flex;
 }
 .title-wrap-bot {
     height: 60px;
     border-bottom: 1px solid #eeeeee;
+    align-items: center;
+    display: flex;
 }
 .input-wrapper {
     display: flex;
@@ -77,7 +82,7 @@ button {
 .bottom-wrapper {
     display: flex;
     flex-direction: column;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 .close-btn {
     width: 7px;
